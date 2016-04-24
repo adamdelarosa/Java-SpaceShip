@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    public Scene scene = new Scene(root,450,700);
+    public Scene scene = new Scene(root,500,800);
     public Stage globalPrimartStage;
     public static Group root = new Group();
 

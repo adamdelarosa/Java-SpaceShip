@@ -1,20 +1,18 @@
 package sample;
 
+import javafx.event.EventHandler;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
-/**
- * Created by ROSA on 4/23/16.
- */
 public class SpaceShip {
 
     Main main;
-    private Rectangle hyperSpaceShip;
     final ImageView selectedImage = new ImageView();
-    Image assetSpaceShip = new Image(Main.class.getResourceAsStream("sample/asset/Ship.png"));
+    public Image assetSpaceShip = new Image("sample/asset/spaceShip.png");
+    HBox boxForShip = new HBox();
+
 
 
 
@@ -25,17 +23,27 @@ public class SpaceShip {
 
 
     public void shipMovment(){
-        hyperSpaceShip = new Rectangle(50,50, Color.BLUE);
-        hyperSpaceShip.setLayoutX(100);
-        hyperSpaceShip.setLayoutY(100);
+        selectedImage.setImage(assetSpaceShip);
+        boxForShip.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                switch (event.getCode()) {
+                    case UP:
+                        System.out.println("UP yours"); break;
+
+                }
+            }
+        });
+
 
 
 
     }
 
     public void addToScreen(){
-        HBox boxForShip = new HBox();
-        boxForShip.getChildren().addAll(hyperSpaceShip);
+        boxForShip.setLayoutX(250);
+        boxForShip.setLayoutY(700);
+        boxForShip.getChildren().addAll(selectedImage);
         main.getRoot().getChildren().add(boxForShip);
     }
 
