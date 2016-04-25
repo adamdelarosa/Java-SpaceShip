@@ -16,6 +16,10 @@ public class Main extends Application {
         return root;
     }
 
+    public Scene getScene (){
+        return scene;
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         scene.setFill(Color.BLACK);
@@ -31,6 +35,8 @@ public class Main extends Application {
         new BackGroundSlide(this,this);
         new SpaceShip();
     }
+
+
     public static void main(String[] args) {
         launch(args);
     }

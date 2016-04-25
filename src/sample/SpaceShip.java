@@ -4,30 +4,21 @@ import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-
-import java.awt.event.KeyListener;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-import java.awt.event.KeyListener;
 
 public class SpaceShip {
 
     Main main;
     final ImageView selectedImage = new ImageView();
     public Image assetSpaceShip = new Image("sample/asset/spaceShip.png");
-    HBox boxForShip = new HBox(100);
+    public HBox boxForShip = new HBox(100);
 
     private static final double W = 600, H = 400;
 
-    private static final String HERO_IMAGE_LOC =
-            "http://icons.iconarchive.com/icons/raindropmemory/legendora/64/Hero-icon.png";
+    private static final String HERO_IMAGE_LOC = "sample/asset/spaceShip.png";
 
     private Image heroImage;
     private Node hero;
@@ -43,25 +34,8 @@ public class SpaceShip {
     public void shipMovment(){
         heroImage = new Image(HERO_IMAGE_LOC);
         hero = new ImageView(heroImage);
-
-        Group dungeon = new Group(hero);
-
+        boxForShip.setFocusTraversable(true);
         moveHeroTo(W / 2, H / 2);
-
-        //Scene scene = new Scene(dungeon, W, H, Color.FORESTGREEN);
-
-
-        boxForShip.setOnMouseClicked(event -> {
-            System.out.println("click!");
-        });
-
-        boxForShip.setOnKeyPressed(event -> {
-            switch (event.getCode()) {
-                case UP:
-                    System.out.println("Hello");
-                    break;
-            }
-        });
 
         boxForShip.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -69,9 +43,10 @@ public class SpaceShip {
                 switch (event.getCode()) {
                     //case UP:    goNorth = true; break;
                     case UP:
-                        System.out.println("Hello");break;
+                        System.out.println("UP");goNorth = true; break;
 
-                    case DOWN:  goSouth = true; break;
+                    case DOWN:  goSouth = true;
+                        System.out.println("DOWN");break;
                     case LEFT:  goWest  = true; break;
                     case RIGHT: goEast  = true; break;
                     case SHIFT: running = true; break;
@@ -80,7 +55,7 @@ public class SpaceShip {
         });
 
 
-        selectedImage.setOnKeyReleased(new EventHandler<KeyEvent>() {
+        boxForShip.setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
                 switch (event.getCode()) {
@@ -142,10 +117,7 @@ public class SpaceShip {
 
 
     public void addToScreen(){
-        selectedImage.setImage(assetSpaceShip);
-        boxForShip.setLayoutX(250);
-        boxForShip.setLayoutY(700);
-        boxForShip.setFillHeight(true);
+        boxForShip.getChildren().addAll(hero);
         boxForShip.getChildren().addAll(selectedImage);
         main.getRoot().getChildren().add(boxForShip);
     }
