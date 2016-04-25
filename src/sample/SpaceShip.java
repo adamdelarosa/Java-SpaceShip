@@ -22,7 +22,7 @@ public class SpaceShip {
     Main main;
     final ImageView selectedImage = new ImageView();
     public Image assetSpaceShip = new Image("sample/asset/spaceShip.png");
-    HBox boxForShip = new HBox();
+    HBox boxForShip = new HBox(100);
 
     private static final double W = 600, H = 400;
 
@@ -48,13 +48,29 @@ public class SpaceShip {
 
         moveHeroTo(W / 2, H / 2);
 
-        Scene scene = new Scene(dungeon, W, H, Color.FORESTGREEN);
+        //Scene scene = new Scene(dungeon, W, H, Color.FORESTGREEN);
 
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+
+        boxForShip.setOnMouseClicked(event -> {
+            System.out.println("click!");
+        });
+
+        boxForShip.setOnKeyPressed(event -> {
+            switch (event.getCode()) {
+                case UP:
+                    System.out.println("Hello");
+                    break;
+            }
+        });
+
+        boxForShip.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
                 switch (event.getCode()) {
-                    case UP:    goNorth = true; break;
+                    //case UP:    goNorth = true; break;
+                    case UP:
+                        System.out.println("Hello");break;
+
                     case DOWN:  goSouth = true; break;
                     case LEFT:  goWest  = true; break;
                     case RIGHT: goEast  = true; break;
@@ -64,7 +80,7 @@ public class SpaceShip {
         });
 
 
-        scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
+        selectedImage.setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
                 switch (event.getCode()) {
@@ -129,6 +145,7 @@ public class SpaceShip {
         selectedImage.setImage(assetSpaceShip);
         boxForShip.setLayoutX(250);
         boxForShip.setLayoutY(700);
+        boxForShip.setFillHeight(true);
         boxForShip.getChildren().addAll(selectedImage);
         main.getRoot().getChildren().add(boxForShip);
     }
