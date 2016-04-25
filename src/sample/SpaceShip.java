@@ -13,20 +13,21 @@ public class SpaceShip {
     private static final double W = 500, H = 800;
     private static final String SPACESHIP = "sample/asset/spaceShip.png";
     private Image heroImage;
-    private Node hero;
+    private Node nodeSpaceShip;
     boolean running, goNorth, goSouth, goEast, goWest;
 
 
     public SpaceShip(){
         shipMovment();
         addToScreen();
+        //Place for space ship
+        setSpaceShipPosition(W / 2, H / 2);
     }
 
     public void shipMovment(){
         heroImage = new Image(SPACESHIP);
-        hero = new ImageView(heroImage);
+        nodeSpaceShip = new ImageView(heroImage);
         boxForShip.setFocusTraversable(true);
-        moveHeroTo(W / 2, H / 2);
 
         boxForShip.setOnKeyPressed(event -> {
             switch (event.getCode()) {
@@ -53,10 +54,10 @@ public class SpaceShip {
             public void handle(long now) {
                 int dx = 0, dy = 0;
 
-                if (goNorth) dy -= 1;
-                if (goSouth) dy += 1;
-                if (goEast)  dx += 1;
-                if (goWest)  dx -= 1;
+                if (goNorth) dy -= 8;
+                if (goSouth) dy += 8;
+                if (goEast)  dx += 8;
+                if (goWest)  dx -= 8;
                 if (running) { dx *= 3; dy *= 3; }
 
                 moveHeroBy(dx, dy);
@@ -73,10 +74,10 @@ public class SpaceShip {
         double x = cx + boxForShip.getLayoutX() + dx;
         double y = cy + boxForShip.getLayoutY() + dy;
 
-        moveHeroTo(x, y);
+        setSpaceShipPosition(x, y);
     }
 
-    private void moveHeroTo(double x, double y) {
+    private void setSpaceShipPosition(double x, double y) {
         final double cx = boxForShip.getBoundsInLocal().getWidth()  / 2;
         final double cy = boxForShip.getBoundsInLocal().getHeight() / 2;
 
@@ -89,7 +90,7 @@ public class SpaceShip {
 
     }
     public void addToScreen(){
-        boxForShip.getChildren().addAll(hero);
+        boxForShip.getChildren().addAll(nodeSpaceShip);
         main.getRoot().getChildren().add(boxForShip);
     }
 }
