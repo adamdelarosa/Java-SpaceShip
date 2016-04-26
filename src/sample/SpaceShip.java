@@ -22,10 +22,18 @@ public class SpaceShip  {
     Main main;
     public HBox boxForShip = new HBox();
     private static final double W = 500, H = 800;
-    private static  String SPACESHIP = "sample/asset/spaceShip.png";
-    private static  String SPACESHIPshit = "sample/asset/shit.png";
+    private static  String SPACESHIP = "sample/asset/shit.png";
+    private static  String SPACESHIPShitOne = "sample/asset/shitOne.png";
+    private static  String SPACESHIPShitTwo = "sample/asset/shitTwo.png";
+    private static  String SPACESHIPShitThree = "sample/asset/shitThree.png";
+    private static  String SPACESHIPShitFour = "sample/asset/shitFour.png";
+
     private Image heroImage;
     private Image heroImage1;
+    private Image heroImage2;
+    private Image heroImage3;
+    private Image heroImage4;
+
     //private Node nodeSpaceShip;
     boolean running, goNorth, goSouth, goEast, goWest;
     private Thread shipAnimation;
@@ -44,7 +52,11 @@ public class SpaceShip  {
 
     public void shipAnimated(){
         heroImage = new Image(SPACESHIP);
-        heroImage1 = new Image(SPACESHIPshit);
+        heroImage1 = new Image(SPACESHIPShitOne);
+        heroImage2 = new Image(SPACESHIPShitTwo);
+        heroImage3 = new Image(SPACESHIPShitThree);
+        heroImage4 = new Image(SPACESHIPShitFour);
+
         //nodeSpaceShip = new ImageView(heroImage);
 
 
@@ -54,21 +66,17 @@ public class SpaceShip  {
 
             while (true)
                 try {
-                    System.out.println("s");
-                    nodeSpaceShip.setImage(heroImage);
-
-                    shipAnimation.sleep(500);
-
-                        nodeSpaceShip.setImage(heroImage1);
-                    System.out.println("ss");
-
-                    shipAnimation.sleep(500);
-
-
-
-
+                    nodeSpaceShip.setImage(heroImage1);
+                    shipAnimation.sleep(100);
+                    nodeSpaceShip.setImage(heroImage2);
+                    shipAnimation.sleep(100);
+                    nodeSpaceShip.setImage(heroImage3);
+                    shipAnimation.sleep(100);
+                    nodeSpaceShip.setImage(heroImage4);
+                    shipAnimation.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                    System.out.println("ShipAnim ERROR");
 
                 }
         });
