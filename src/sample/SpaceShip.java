@@ -16,7 +16,6 @@ public class SpaceShip {
     private Node nodeSpaceShip;
     boolean running, goNorth, goSouth, goEast, goWest;
 
-
     public SpaceShip(){
         shipMovment();
         addToScreen();
