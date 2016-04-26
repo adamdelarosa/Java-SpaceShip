@@ -1,31 +1,84 @@
 package sample;
 
+import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
+import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
-public class SpaceShip {
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+
+
+public class SpaceShip  {
 
     Main main;
     public HBox boxForShip = new HBox();
     private static final double W = 500, H = 800;
-    private static final String SPACESHIP = "sample/asset/spaceShip.png";
+    private static  String SPACESHIP = "sample/asset/spaceShip.png";
+    private static  String SPACESHIPshit = "sample/asset/shit.png";
     private Image heroImage;
-    private Node nodeSpaceShip;
+    private Image heroImage1;
+    //private Node nodeSpaceShip;
     boolean running, goNorth, goSouth, goEast, goWest;
+    private Thread shipAnimation;
+    ImageView nodeSpaceShip = new ImageView();
+    BufferedImage sprite = null;
+
 
     public SpaceShip(){
+        shipAnimated();
         shipMovment();
         addToScreen();
         //Place for space ship
         setSpaceShipPosition(W / 2, H / 2);
     }
 
-    public void shipMovment(){
+
+    public void shipAnimated(){
         heroImage = new Image(SPACESHIP);
-        nodeSpaceShip = new ImageView(heroImage);
+        heroImage1 = new Image(SPACESHIPshit);
+        //nodeSpaceShip = new ImageView(heroImage);
+
+
+
+        shipAnimation = new Thread(()->{
+
+
+            while (true)
+                try {
+                    System.out.println("s");
+                    nodeSpaceShip.setImage(heroImage);
+
+                    shipAnimation.sleep(500);
+
+                        nodeSpaceShip.setImage(heroImage1);
+                    System.out.println("ss");
+
+                    shipAnimation.sleep(500);
+
+
+
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+
+                }
+        });
+        shipAnimation.start();
+    }
+
+
+    public void shipMovment(){
+
+
         boxForShip.setFocusTraversable(true);
 
         boxForShip.setOnKeyPressed(event -> {
@@ -92,4 +145,6 @@ public class SpaceShip {
         boxForShip.getChildren().addAll(nodeSpaceShip);
         main.getRoot().getChildren().add(boxForShip);
     }
+
+
 }
