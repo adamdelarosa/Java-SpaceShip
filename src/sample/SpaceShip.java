@@ -67,17 +67,16 @@ public class SpaceShip  {
             while (true)
                 try {
                     nodeSpaceShip.setImage(heroImage1);
-                    shipAnimation.sleep(100);
+                    shipAnimation.sleep(300);
                     nodeSpaceShip.setImage(heroImage2);
-                    shipAnimation.sleep(100);
+                    shipAnimation.sleep(300);
                     nodeSpaceShip.setImage(heroImage3);
-                    shipAnimation.sleep(100);
+                    shipAnimation.sleep(300);
                     nodeSpaceShip.setImage(heroImage4);
-                    shipAnimation.sleep(100);
+                    shipAnimation.sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                     System.out.println("ShipAnim ERROR");
-
                 }
         });
         shipAnimation.start();
