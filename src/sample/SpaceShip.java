@@ -63,6 +63,9 @@ public class SpaceShip  {
 
         shipAnimation = new Thread(()->{
             while (true)
+
+
+
                 try {
                     nodeSpaceShip.setImage(heroImage1);
                     shipAnimation.sleep(300);
