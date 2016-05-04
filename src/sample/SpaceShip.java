@@ -49,6 +49,8 @@ public class SpaceShip  {
         setSpaceShipPosition(W / 2, H / 2);
     }
 
+
+
     public void shipAnimated(){
         heroImage = new Image(SPACESHIP);
         heroImage1 = new Image(SPACESHIPShitOne);
