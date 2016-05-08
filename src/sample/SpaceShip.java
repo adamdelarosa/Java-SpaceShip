@@ -60,8 +60,6 @@ public class SpaceShip  {
 
         //nodeSpaceShip = new ImageView(heroImage);
 
-
-
         shipAnimation = new Thread(()->{
             while (true)
 
