@@ -57,7 +57,6 @@ public class SpaceShip  {
         heroImage2 = new Image(SPACESHIPShitTwo);
         heroImage3 = new Image(SPACESHIPShitThree);
         heroImage4 = new Image(SPACESHIPShitFour);
-
         //nodeSpaceShip = new ImageView(heroImage);
 
         shipAnimation = new Thread(()->{
