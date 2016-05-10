@@ -29,9 +29,13 @@ public class SpaceShip  {
     private static  String SPACESHIPShitFour = "sample/asset/shitFour.png";
 
     private Image heroImage;
+
     private Image heroImage1;
+
     private Image heroImage2;
+
     private Image heroImage3;
+
     private Image heroImage4;
 
     //private Node nodeSpaceShip;
