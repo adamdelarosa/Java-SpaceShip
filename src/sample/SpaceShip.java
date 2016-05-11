@@ -24,7 +24,7 @@ public class SpaceShip  {
     private static final double W = 500, H = 800;
     private static  String SPACESHIP = "sample/asset/shit.png";
 
-    private Image heroImage;
+    private Image spaceShipImage;
 
     //private Node nodeSpaceShip;
     boolean running, goNorth, goSouth, goEast, goWest;
@@ -39,8 +39,8 @@ public class SpaceShip  {
     }
 
     public void shipAnimated() {
-        heroImage = new Image(SPACESHIP);
-        nodeSpaceShip.setImage(heroImage);
+        spaceShipImage = new Image(SPACESHIP);
+        nodeSpaceShip.setImage(spaceShipImage);
     }
 
 
@@ -80,12 +80,12 @@ public class SpaceShip  {
                 if (goWest)  dx -= 8;
                 if (running) { dx *= 3; dy *= 3; }
 
-                moveHeroBy(dx, dy);
+                moveShipBy(dx, dy);
             }
         };
         timer.start();
     }
-    private void moveHeroBy(int dx, int dy) {
+    private void moveShipBy(int dx, int dy) {
         if (dx == 0 && dy == 0) return;
 
         final double cx = boxForShip.getBoundsInLocal().getWidth()  / 2;
