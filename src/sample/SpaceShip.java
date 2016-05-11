@@ -1,20 +1,9 @@
 package sample;
 
-import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
-import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
-import javafx.stage.Stage;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
 
 
 public class SpaceShip  {
@@ -23,7 +12,6 @@ public class SpaceShip  {
     public HBox boxForShip = new HBox();
     private static final double W = 500, H = 800;
     private static  String SPACESHIP = "sample/asset/shit.png";
-
     private Image spaceShipImage;
 
     //private Node nodeSpaceShip;
@@ -113,5 +101,4 @@ public class SpaceShip  {
         boxForShip.getChildren().addAll(nodeSpaceShip);
         main.getRoot().getChildren().add(boxForShip);
     }
-
 }
