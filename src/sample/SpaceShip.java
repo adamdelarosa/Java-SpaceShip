@@ -23,27 +23,12 @@ public class SpaceShip  {
     public HBox boxForShip = new HBox();
     private static final double W = 500, H = 800;
     private static  String SPACESHIP = "sample/asset/shit.png";
-    private static  String SPACESHIPShitOne = "sample/asset/shitOne.png";
-    private static  String SPACESHIPShitTwo = "sample/asset/shitTwo.png";
-    private static  String SPACESHIPShitThree = "sample/asset/shitThree.png";
-    private static  String SPACESHIPShitFour = "sample/asset/shitFour.png";
 
     private Image heroImage;
 
-    private Image heroImage1;
-
-    private Image heroImage2;
-
-    private Image heroImage3;
-
-    private Image heroImage4;
-
     //private Node nodeSpaceShip;
     boolean running, goNorth, goSouth, goEast, goWest;
-    private Thread shipAnimation;
     ImageView nodeSpaceShip = new ImageView();
-    BufferedImage sprite = null;
-
 
     public SpaceShip(){
         shipAnimated();
@@ -128,6 +113,5 @@ public class SpaceShip  {
         boxForShip.getChildren().addAll(nodeSpaceShip);
         main.getRoot().getChildren().add(boxForShip);
     }
-
 
 }
