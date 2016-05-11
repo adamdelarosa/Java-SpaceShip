@@ -8,7 +8,10 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    public Scene scene = new Scene(root,500,800);
+    public int windowHeight = 500;
+    public int windowWeight = 800;
+
+    public Scene scene = new Scene(root,windowHeight,windowWeight);
     public Stage globalPrimartStage;
     public static Group root = new Group();
 
@@ -32,7 +35,7 @@ public class Main extends Application {
     }
 
     public void MainStarter() {
-        new BackGroundSlide(this,this);
+       // new BackGroundSlide(this,this);
         new SpaceShip();
     }
 
