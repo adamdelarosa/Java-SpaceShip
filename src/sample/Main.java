@@ -8,12 +8,12 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    public int windowHeight = 500;
-    public int windowWeight = 800;
-
+    public double windowHeight = 500;
+    public double windowWeight = 800;
     public Scene scene = new Scene(root,windowHeight,windowWeight);
     public Stage globalPrimartStage;
     public static Group root = new Group();
+
 
     public static Group getRoot(){
         return root;
@@ -35,7 +35,7 @@ public class Main extends Application {
     }
 
     public void MainStarter() {
-       // new BackGroundSlide(this,this);
+        new BackGroundSlide(this,this);
         new SpaceShip();
     }
 
