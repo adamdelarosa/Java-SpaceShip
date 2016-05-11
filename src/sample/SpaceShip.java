@@ -53,32 +53,9 @@ public class SpaceShip  {
         setSpaceShipPosition(W / 2, H / 2);
     }
 
-    public void shipAnimated(){
+    public void shipAnimated() {
         heroImage = new Image(SPACESHIP);
-        heroImage1 = new Image(SPACESHIPShitOne);
-        heroImage2 = new Image(SPACESHIPShitTwo);
-        heroImage3 = new Image(SPACESHIPShitThree);
-        heroImage4 = new Image(SPACESHIPShitFour);
-        //nodeSpaceShip = new ImageView(heroImage);
-
-        shipAnimation = new Thread(()->{
-            while (true)
-
-                try {
-                    nodeSpaceShip.setImage(heroImage1);
-                    shipAnimation.sleep(300);
-                    nodeSpaceShip.setImage(heroImage2);
-                    shipAnimation.sleep(300);
-                    nodeSpaceShip.setImage(heroImage3);
-                    shipAnimation.sleep(300);
-                    nodeSpaceShip.setImage(heroImage4);
-                    shipAnimation.sleep(300);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                    System.out.println("ShipAnim ERROR");
-                }
-        });
-        shipAnimation.start();
+        nodeSpaceShip.setImage(heroImage);
     }
 
 
