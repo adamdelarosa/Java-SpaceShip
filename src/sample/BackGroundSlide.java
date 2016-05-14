@@ -13,7 +13,6 @@ public class BackGroundSlide {
 
     public Main main,sceneMain,globalPrimartStageMain;
 
-
     private static final int STAR_COUNT = 2000;
     private final Rectangle[] nodes = new Rectangle[STAR_COUNT];
     private final double[] angles = new double[STAR_COUNT];
