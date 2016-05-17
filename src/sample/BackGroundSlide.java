@@ -17,7 +17,6 @@ public class BackGroundSlide {
     private final Rectangle[] nodes = new Rectangle[STAR_COUNT];
     private final double[] angles = new double[STAR_COUNT];
     private final long[] start = new long[STAR_COUNT];
-
     private final Random random = new Random();
 
     BackGroundSlide(Main scenemain, Main globalprimartstageMain) {
