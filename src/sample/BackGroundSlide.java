@@ -9,6 +9,7 @@ import javafx.animation.AnimationTimer;
 
 import java.util.Random;
 
+
 public class BackGroundSlide {
 
     public Main main,sceneMain,globalPrimartStageMain;
