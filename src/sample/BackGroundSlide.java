@@ -43,6 +43,9 @@ public class BackGroundSlide {
                     node.setTranslateY(Math.sin(-400) * d + height);
                 }
             }
+
+
+
         }.start();
         HBox backgroundBox = new HBox();
         backgroundBox.getChildren().addAll(nodes);
