@@ -19,6 +19,9 @@ public class SpaceShip  {
     public SpaceShip(){
         shipAnimated();
 
+
+
+
         shipMovment();
         addToScreen();
         //Set space ship
