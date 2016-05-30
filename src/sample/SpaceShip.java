@@ -21,7 +21,6 @@ public class SpaceShip  {
         addToScreen();
         //Set space ship
         setSpaceShipPosition(W / 2, H / 2);
-
     }
 
     public void shipAnimated() {
