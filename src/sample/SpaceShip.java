@@ -28,7 +28,6 @@ public class SpaceShip  {
         nodeSpaceShip.setImage(spaceShipImage);
     }
 
-
     public void shipMovment(){
 
 
