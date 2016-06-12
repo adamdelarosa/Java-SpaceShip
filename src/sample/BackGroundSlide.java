@@ -43,6 +43,7 @@ public class BackGroundSlide {
                     final double d = t * radius / 2000000000.0;
                     node.setTranslateY(Math.sin(-400) * d + height);
                 }
+
             }
         }.start();
         HBox backgroundBox = new HBox();
