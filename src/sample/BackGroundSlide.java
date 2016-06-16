@@ -32,6 +32,7 @@ public class BackGroundSlide {
             angles[i] = 2.0 * Math.PI * random.nextDouble();
             start[i] = random.nextInt(2000000000);
         }
+
         new AnimationTimer() {
             @Override
             public void handle(long now) {
