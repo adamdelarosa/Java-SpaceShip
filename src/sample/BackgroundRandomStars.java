@@ -25,7 +25,7 @@ public class BackgroundRandomStars {
     BackgroundRandomStars(){
         paintComponent();
     }
-
+//
     public void paintComponent() {
         iv1.setImage(imageOne);
         iv1.setViewport(viewportRectOne);
@@ -35,8 +35,6 @@ public class BackgroundRandomStars {
         //For now:
         iv2.setTranslateY(0);
         iv1.setTranslateY(0);
-
-
 
         //Background movement:
         backgroundScrollRunner = new Thread(() -> {
