@@ -7,6 +7,8 @@ import javafx.scene.layout.*;
 
 public class BackgroundRandomStars {
 
+    //
+
     public Main main;
 
     Image imageOne = new Image("sample/asset/splash.jpg");
